@@ -6,7 +6,7 @@ import 'package:healthycare/patient_views/SymptomsPages/head_page.dart';
 import 'package:healthycare/patient_views/SymptomsPages/heart_page.dart';
 import 'package:healthycare/patient_views/SymptomsPages/nose_page.dart';
 import 'package:healthycare/patient_views/SymptomsPages/stomech_page.dart';
-import 'package:healthycare/patient_views/leg_page.dart';
+import 'package:healthycare/patient_views/SymptomsPages/leg_page.dart';
 
 class ChooseSymptoms extends StatefulWidget {
   const ChooseSymptoms({super.key});

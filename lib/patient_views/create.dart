@@ -47,11 +47,21 @@ class _RegistState extends State<Regist> {
                 const SizedBox(
                   height: 10,
                 ),
-                TextFilt(hintText: 'رقم الهويه الوطنيه',),
-                TextFilt(hintText: 'الاسم',),
-                TextFilt(hintText: 'العنوان',),
-                TextFilt(hintText:  'رقم الجوال',),
-                TextFilt(hintText: 'كلمه المرور',),
+                TextFilt(
+                  hintText: 'رقم الهويه الوطنيه',
+                ),
+                TextFilt(
+                  hintText: 'الاسم',
+                ),
+                TextFilt(
+                  hintText: 'العنوان',
+                ),
+                TextFilt(
+                  hintText: 'رقم الجوال',
+                ),
+                TextFilt(
+                  hintText: 'كلمه المرور',
+                ),
                 const SizedBox(
                   height: 8,
                 ),
@@ -80,15 +90,16 @@ class _RegistState extends State<Regist> {
                           decoration: InputDecoration(
                             border: InputBorder.none,
                             hintText: 'هل لديك امراض وراثيه',
-                            hintStyle: TextStyle(
-                                color: Colors.white
-                            ),
+                            hintStyle: TextStyle(color: Colors.white),
                           ),
                         ),
                       ),
                       CheckboxListTile(
                         controlAffinity: ListTileControlAffinity.leading,
-                        title: Text("هل لديك مرض السكر", style: TextStyle(color: Colors.white),),
+                        title: Text(
+                          "هل لديك مرض السكر",
+                          style: TextStyle(color: Colors.white),
+                        ),
                         value: _leftCheekSelected,
                         onChanged: (value) {
                           setState(() {
@@ -98,7 +109,8 @@ class _RegistState extends State<Regist> {
                       ),
                       CheckboxListTile(
                         controlAffinity: ListTileControlAffinity.leading,
-                        title: Text("هل لديك مرض الضغط",style: TextStyle(color: Colors.white)),
+                        title: Text("هل لديك مرض الضغط",
+                            style: TextStyle(color: Colors.white)),
                         value: _rightCheekSelected,
                         onChanged: (value) {
                           setState(() {
@@ -113,29 +125,34 @@ class _RegistState extends State<Regist> {
                   height: 8,
                 ),
                 Container(
-                    decoration : BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) {
-                              return loginPatient();
-                            }));
-                      },
-                      child: Text(
-                        'انشاء حساب',
-                        style: TextStyle(fontSize: 22),
-                      ),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return loginPatient();
+                          },
+                        ),
+                      );
+                    },
+                    child: Text(
+                      'انشاء حساب',
+                      style: TextStyle(fontSize: 22),
                     ),
                   ),
+                ),
                 TextButton(
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                          return loginPatient();
-                        }));                  },
+                      return loginPatient();
+                    }));
+                  },
                   child: const Text(
                     'لديك حساب بالفعل',
                     style: TextStyle(color: Colors.black),

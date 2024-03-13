@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../payment_page.dart';
+
 class NosePage extends StatefulWidget {
   const NosePage({super.key});
 
@@ -8,18 +10,21 @@ class NosePage extends StatefulWidget {
 }
 
 class _NosePageState extends State<NosePage> {
-  bool _CheekSelected1 = false;
-  bool _CheekSelected2 = false;
-  bool _CheekSelected3 = false;
-  bool _CheekSelected4 = false;
-  bool _CheekSelected5 = false;
-  bool _CheekSelected6 = false;
-  bool _CheekSelected7 = false;
-  bool _CheekSelected8 = false;
-  bool _CheekSelected9 = false;
-  bool _CheekSelected10 = false;
-  bool _CheekSelected11 = false;
+  List<String> _Nose = [
+    'احتقان الأنف', //1
+    'سيلان الأنف', //2
+    'حكة الأنف', //3
+    'العطس', //4
+    'الألم أو الضغط', //5
+    'صعوبة الشم', //6
+    'النزيف الأنفي', //7
+    'امتلاء العينين بالدموع', //8
+    'انسداد الأذن', //9
+    'احتقان الحلق', //10
+    'الشعور بالتعب والإرهاق', //11
+  ];
 
+  List<String> _selectedItems = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,166 +43,68 @@ class _NosePageState extends State<NosePage> {
           ),
         ),
       ),
-      body: Column(
-        children: <Widget>[
-          CheckboxListTile(
-            controlAffinity: ListTileControlAffinity.leading,
-            title: Text(
-              'احتقان الأنف',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            value: _CheekSelected1,
-            onChanged: (value) {
+      body: ListView.builder(
+        itemCount: _Nose.length,
+        itemBuilder: (BuildContext context, int index) {
+          final item = _Nose[index];
+          final isSelected = _selectedItems.contains(item);
+
+          return CheckboxListTile(
+            title: Text(item),
+            value: isSelected,
+            onChanged: (bool? value) {
               setState(() {
-                _CheekSelected1 = !_CheekSelected1;
+                if (value == true) {
+                  _selectedItems.add(item);
+                } else {
+                  _selectedItems.remove(item);
+                }
               });
             },
-          ),
-          CheckboxListTile(
-            controlAffinity: ListTileControlAffinity.leading,
-            title: Text(
-              'سيلان الأنف',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            value: _CheekSelected2,
-            onChanged: (value) {
-              setState(() {
-                _CheekSelected2 = !_CheekSelected2;
-              });
+          );
+        },
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return AlertDialog(
+                title: Text('Selected Items'),
+                content: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children:
+                      _selectedItems.map((item) => Text('- $item')).toList(),
+                ),
+                actions: [
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: Text('Cancel'),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(
+                            builder: (context) {
+                              return PaymentPage();
+                            },
+                          ));
+                        },
+                        child: Text('OK'),
+                      ),
+                    ],
+                  ),
+                ],
+              );
             },
-          ),
-          CheckboxListTile(
-            controlAffinity: ListTileControlAffinity.leading,
-            title: Text(
-              'حكة الأنف',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            value: _CheekSelected3,
-            onChanged: (value) {
-              setState(() {
-                _CheekSelected3 = !_CheekSelected3;
-              });
-            },
-          ),
-          CheckboxListTile(
-            controlAffinity: ListTileControlAffinity.leading,
-            title: Text(
-              'العطس',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            value: _CheekSelected4,
-            onChanged: (value) {
-              setState(() {
-                _CheekSelected4 = !_CheekSelected4;
-              });
-            },
-          ),
-          CheckboxListTile(
-            controlAffinity: ListTileControlAffinity.leading,
-            title: Text(
-              'الألم أو الضغط',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            value: _CheekSelected5,
-            onChanged: (value) {
-              setState(() {
-                _CheekSelected5 = !_CheekSelected5;
-              });
-            },
-          ),
-          CheckboxListTile(
-            controlAffinity: ListTileControlAffinity.leading,
-            title: Text(
-              'صعوبة الشم',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            value: _CheekSelected6,
-            onChanged: (value) {
-              setState(() {
-                _CheekSelected6 = !_CheekSelected6;
-              });
-            },
-          ),
-          CheckboxListTile(
-            controlAffinity: ListTileControlAffinity.leading,
-            title: Text(
-              'النزيف الأنفي',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            value: _CheekSelected7,
-            onChanged: (value) {
-              setState(() {
-                _CheekSelected7 = !_CheekSelected7;
-              });
-            },
-          ),
-          CheckboxListTile(
-            controlAffinity: ListTileControlAffinity.leading,
-            title: Text(
-              'امتلاء العينين بالدموع',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            value: _CheekSelected8,
-            onChanged: (value) {
-              setState(() {
-                _CheekSelected8 = !_CheekSelected8;
-              });
-            },
-          ),
-          CheckboxListTile(
-            controlAffinity: ListTileControlAffinity.leading,
-            title: Text(
-              'انسداد الأذن',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            value: _CheekSelected9,
-            onChanged: (value) {
-              setState(() {
-                _CheekSelected9 = !_CheekSelected9;
-              });
-            },
-          ),
-          CheckboxListTile(
-            controlAffinity: ListTileControlAffinity.leading,
-            title: Text(
-              'احتقان الحلق',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            value: _CheekSelected10,
-            onChanged: (value) {
-              setState(() {
-                _CheekSelected10 = !_CheekSelected10;
-              });
-            },
-          ),
-          CheckboxListTile(
-            controlAffinity: ListTileControlAffinity.leading,
-            title: Text(
-              'الشعور بالتعب والإرهاق',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            value: _CheekSelected11,
-            onChanged: (value) {
-              setState(() {
-                _CheekSelected11 = !_CheekSelected11;
-              });
-            },
-          ),
-          SizedBox(
-            height: 15,
-          ),
-          MaterialButton(
-            padding: EdgeInsets.all(15),
-            color: Colors.blue,
-            onPressed: () {},
-            child: Text(
-              ' Next ',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          )
-        ],
+          );
+        },
+        child: Icon(Icons.check),
       ),
     );
   }

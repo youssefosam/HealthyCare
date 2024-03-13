@@ -2,30 +2,31 @@ import 'package:flutter/material.dart';
 
 import '../payment_page.dart';
 
-class EyePage extends StatefulWidget {
-  const EyePage({super.key});
+class LegPage extends StatefulWidget {
+  const LegPage({super.key});
 
   @override
-  State<EyePage> createState() => _EyePageState();
+  State<LegPage> createState() => _LegPageState();
 }
 
-class _EyePageState extends State<EyePage> {
-  List<String> _Eye = [
-    'بقع ونقاط كثيرة في المجال البصري', //1
-    'رؤية ستار داكن يُغطي مجال الرؤية', //2
-    'ألم مفاجئ في العينين والاحمرار والغثيان والقيء', //3
-    'إغلاق تدريجي أو مفاجئ في مجال حقل الرؤية', //4
-    'تشوهات في مركز البصري ', //5
-    'رؤية هالات حول الأضواء ليلًا', //6
-    'حرقة العينين وحكة ودموع وألم سطح العين', //7
-    'الرؤية المزدوجة', //8
-    'عدم وضوح الرؤية المفاجئ ', //9
-    'صداع بالرأس (متوسط القوة)  ', //10
-    'ألم بعضلات الوجه  ', //11
-    'صعوبة التركيز في المهام البصرية  ', //12
+class _LegPageState extends State<LegPage> {
+  List<String> _Leg = [
+    'آلام الساق', //1
+    'تورم الساق', //2
+    'تنميل أو خدر في الساقين', //3
+    'عسر المشي أو صعوبة في التحرك', //4
+    'القرمزية أو التغيرات في لون الجلد', //5
+    'التشنجات', //6
+    'الحكة', //7
+    'ألم المفاصل', //8
+    'الإحساس بالوخز', //9
+    'تورم المفصل', //10
+    'كدمات على الجلد', //11
+    'الحرارة والتعب ', //12
   ];
 
   List<String> _selectedItems = [];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +38,7 @@ class _EyePageState extends State<EyePage> {
         elevation: 0,
         backgroundColor: Colors.blueAccent,
         title: Text(
-          "Eyes symptoms",
+          "Leg symptoms",
           style: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.bold,
@@ -45,9 +46,9 @@ class _EyePageState extends State<EyePage> {
         ),
       ),
       body: ListView.builder(
-        itemCount: _Eye.length,
+        itemCount: _Leg.length,
         itemBuilder: (BuildContext context, int index) {
-          final item = _Eye[index];
+          final item = _Leg[index];
           final isSelected = _selectedItems.contains(item);
 
           return CheckboxListTile(
@@ -82,7 +83,7 @@ class _EyePageState extends State<EyePage> {
                   Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      TextButton(
+                       TextButton(
                         onPressed: () {
                           Navigator.pop(context);
                         },

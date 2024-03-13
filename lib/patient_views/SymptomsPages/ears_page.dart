@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../payment_page.dart';
+
 class EarsPage extends StatefulWidget {
   const EarsPage({super.key});
 
@@ -8,17 +10,22 @@ class EarsPage extends StatefulWidget {
 }
 
 class _EarsPageState extends State<EarsPage> {
-  bool _CheekSelected1 = false;
-  bool _CheekSelected2 = false;
-  bool _CheekSelected3 = false;
-  bool _CheekSelected4 = false;
-  bool _CheekSelected5 = false;
-  bool _CheekSelected6 = false;
-  bool _CheekSelected7 = false;
-  bool _CheekSelected8 = false;
-  bool _CheekSelected9 = false;
-  bool _CheekSelected10 = false;
+  List<String> _Ears = [
+    'آلام الأذن', //1
+    'احتقان الأذن', //2
+    'فقدان السمع', //3
+    'طنين الأذن', //4
+    'دوار الأذن', //5
+    'صعوبة السمع أو الاستجابة للأصوات', //6
+    'فقدان التوازن', //7
+    'إفرازات من الأذن', //8
+    'الاحمرار والتورم خلف الأذن', //9
+    'شعور بضغط واقع على الأذنين', //10
+    // 'ألم بعضلات الوجه  ', //11
+    // 'صعوبة التركيز في المهام البصرية  ', //12
+  ];
 
+  List<String> _selectedItems = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,153 +44,68 @@ class _EarsPageState extends State<EarsPage> {
           ),
         ),
       ),
-      body: Column(
-        children: <Widget>[
-          CheckboxListTile(
-            controlAffinity: ListTileControlAffinity.leading,
-            title: Text(
-              'آلام الأذن',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            value: _CheekSelected1,
-            onChanged: (value) {
+      body: ListView.builder(
+        itemCount: _Ears.length,
+        itemBuilder: (BuildContext context, int index) {
+          final item = _Ears[index];
+          final isSelected = _selectedItems.contains(item);
+
+          return CheckboxListTile(
+            title: Text(item),
+            value: isSelected,
+            onChanged: (bool? value) {
               setState(() {
-                _CheekSelected1 = !_CheekSelected1;
+                if (value == true) {
+                  _selectedItems.add(item);
+                } else {
+                  _selectedItems.remove(item);
+                }
               });
             },
-          ),
-          CheckboxListTile(
-            controlAffinity: ListTileControlAffinity.leading,
-            title: Text(
-              'احتقان الأذن',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            value: _CheekSelected2,
-            onChanged: (value) {
-              setState(() {
-                _CheekSelected2 = !_CheekSelected2;
-              });
+          );
+        },
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return AlertDialog(
+                title: Text('Selected Items'),
+                content: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children:
+                      _selectedItems.map((item) => Text('- $item')).toList(),
+                ),
+                actions: [
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: Text('Cancel'),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(
+                            builder: (context) {
+                              return PaymentPage();
+                            },
+                          ));
+                        },
+                        child: Text('OK'),
+                      ),
+                    ],
+                  ),
+                ],
+              );
             },
-          ),
-          CheckboxListTile(
-            controlAffinity: ListTileControlAffinity.leading,
-            title: Text(
-              'فقدان السمع',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            value: _CheekSelected3,
-            onChanged: (value) {
-              setState(() {
-                _CheekSelected3 = !_CheekSelected3;
-              });
-            },
-          ),
-          CheckboxListTile(
-            controlAffinity: ListTileControlAffinity.leading,
-            title: Text(
-              'طنين الأذن',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            value: _CheekSelected4,
-            onChanged: (value) {
-              setState(() {
-                _CheekSelected4 = !_CheekSelected4;
-              });
-            },
-          ),
-          CheckboxListTile(
-            controlAffinity: ListTileControlAffinity.leading,
-            title: Text(
-              'دوار الأذن',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            value: _CheekSelected5,
-            onChanged: (value) {
-              setState(() {
-                _CheekSelected5 = !_CheekSelected5;
-              });
-            },
-          ),
-          CheckboxListTile(
-            controlAffinity: ListTileControlAffinity.leading,
-            title: Text(
-              'صعوبة السمع أو الاستجابة للأصوات',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            value: _CheekSelected6,
-            onChanged: (value) {
-              setState(() {
-                _CheekSelected6 = !_CheekSelected6;
-              });
-            },
-          ),
-          CheckboxListTile(
-            controlAffinity: ListTileControlAffinity.leading,
-            title: Text(
-              'فقدان التوازن',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            value: _CheekSelected7,
-            onChanged: (value) {
-              setState(() {
-                _CheekSelected7 = !_CheekSelected7;
-              });
-            },
-          ),
-          CheckboxListTile(
-            controlAffinity: ListTileControlAffinity.leading,
-            title: Text(
-              'إفرازات من الأذن',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            value: _CheekSelected8,
-            onChanged: (value) {
-              setState(() {
-                _CheekSelected8 = !_CheekSelected8;
-              });
-            },
-          ),
-          CheckboxListTile(
-            controlAffinity: ListTileControlAffinity.leading,
-            title: Text(
-              'الاحمرار والتورم خلف الأذن',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            value: _CheekSelected9,
-            onChanged: (value) {
-              setState(() {
-                _CheekSelected9 = !_CheekSelected9;
-              });
-            },
-          ),
-          CheckboxListTile(
-            controlAffinity: ListTileControlAffinity.leading,
-            title: Text(
-              'شعور بضغط واقع على الأذنين',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            value: _CheekSelected10,
-            onChanged: (value) {
-              setState(() {
-                _CheekSelected10 = !_CheekSelected10;
-              });
-            },
-          ),
-          SizedBox(
-            height: 15,
-          ),
-          MaterialButton(
-            padding: EdgeInsets.all(15),
-            color: Colors.blue,
-            onPressed: () {},
-            child: Text(
-              ' Next ',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          )
-        ],
+          );
+        },
+        child: Icon(Icons.check),
       ),
     );
   }

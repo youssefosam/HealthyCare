@@ -19,6 +19,7 @@ class _RegistState extends State<Regist> {
   final Address = TextEditingController();
   final PhoneNumber = TextEditingController();
   final Password = TextEditingController();
+  AddPatient patient = new AddPatient();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -165,7 +166,7 @@ class _RegistState extends State<Regist> {
                   ),
                   child: ElevatedButton(
                     onPressed: () {
-                      AddPatient(Name,Email,Address,PhoneNumber,Password);
+                      patient;
                       Navigator.push(
                         context,
                         MaterialPageRoute(

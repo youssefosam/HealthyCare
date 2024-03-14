@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:healthycare/Service/add_paient.dart';
+// import 'package:healthycare/Service/add_paient.dart';
 import 'package:healthycare/patient_views/login.dart';
 
 import '../widgets/textfilt.dart';
@@ -21,7 +21,7 @@ class _RegistState extends State<Regist> {
   final Address = TextEditingController();
   final PhoneNumber = TextEditingController();
   final Password = TextEditingController();
-  AddPatient patient = new AddPatient();
+  // AddPatient patient = new AddPatient(Name, Email, Address, PhoneNumber, Password);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -168,7 +168,7 @@ class _RegistState extends State<Regist> {
                   ),
                   child: ElevatedButton(
                     onPressed: () {
-                      patient;
+                      // patient;
                       Navigator.push(
                         context,
                         MaterialPageRoute(

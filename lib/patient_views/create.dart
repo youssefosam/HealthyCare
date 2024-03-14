@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:healthycare/Service/add_paient.dart';
 import 'package:healthycare/patient_views/login.dart';
 
 import '../widgets/textfilt.dart';
@@ -14,7 +15,9 @@ class _RegistState extends State<Regist> {
   bool _leftCheekSelected = false;
   bool _rightCheekSelected = false;
   final Name = TextEditingController();
-  final  Email = TextEditingController();
+  final Email = TextEditingController();
+  final Address = TextEditingController();
+  final PhoneNumber = TextEditingController();
   final Password = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -51,7 +54,7 @@ class _RegistState extends State<Regist> {
                   height: 10,
                 ),
                 TextFilt(
-                  hintText: 'رقم الهويه الوطنيه',
+                  hintText: 'الايميل',
                 ),
                 TextFilt(
                   hintText: 'الاسم',
@@ -82,46 +85,74 @@ class _RegistState extends State<Regist> {
                     borderRadius: BorderRadius.all(Radius.circular(17)),
                     // borderRadius: BorderRadius.circular(12),
                   ),
-                  child: Column(
-                    // Use Row for horizontal alignment
-                    mainAxisAlignment:
-                        MainAxisAlignment.end, // Align checkbox to the right
-                    children: [
-                      const Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 17),
-                        child: TextField(
-                          decoration: InputDecoration(
-                            border: InputBorder.none,
-                            hintText: 'هل لديك امراض وراثيه',
-                            hintStyle: TextStyle(color: Colors.white),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      // Use Row for horizontal alignment
+                      mainAxisAlignment:
+                          MainAxisAlignment.end, // Align checkbox to the right
+                      children: [
+                        const Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 17),
+                          child: TextField(
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                              hintText: 'هل لديك امراض وراثيه',
+                              hintStyle: TextStyle(color: Colors.white),
+                            ),
                           ),
                         ),
-                      ),
-                      CheckboxListTile(
-                        controlAffinity: ListTileControlAffinity.leading,
-                        title: Text(
-                          "هل لديك مرض السكر",
-                          style: TextStyle(color: Colors.white),
+                        CheckboxListTile(
+                          controlAffinity: ListTileControlAffinity.leading,
+                          title: Text(
+                            "هل لديك مرض السكر",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          value: _leftCheekSelected,
+                          onChanged: (value) {
+                            setState(() {
+                              _leftCheekSelected = !_leftCheekSelected;
+                            });
+                          },
                         ),
-                        value: _leftCheekSelected,
-                        onChanged: (value) {
-                          setState(() {
-                            _leftCheekSelected = !_leftCheekSelected;
-                          });
-                        },
-                      ),
-                      CheckboxListTile(
-                        controlAffinity: ListTileControlAffinity.leading,
-                        title: Text("هل لديك مرض الضغط",
-                            style: TextStyle(color: Colors.white)),
-                        value: _rightCheekSelected,
-                        onChanged: (value) {
-                          setState(() {
-                            _rightCheekSelected = !_rightCheekSelected;
-                          });
-                        },
-                      )
-                    ],
+                        CheckboxListTile(
+                          controlAffinity: ListTileControlAffinity.leading,
+                          title: Text("هل لديك مرض الضغط",
+                              style: TextStyle(color: Colors.white)),
+                          value: _rightCheekSelected,
+                          onChanged: (value) {
+                            setState(() {
+                              _rightCheekSelected = !_rightCheekSelected;
+                            });
+                          },
+                        ),
+                        CheckboxListTile(
+                          controlAffinity: ListTileControlAffinity.leading,
+                          title: Text(
+                            "نزف الدم الوراثي",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          value: _leftCheekSelected,
+                          onChanged: (value) {
+                            setState(() {
+                              _leftCheekSelected = !_leftCheekSelected;
+                            });
+                          },
+                        ),
+                        CheckboxListTile(
+                          controlAffinity: ListTileControlAffinity.leading,
+                          title: Text(
+                            "فقر الدم ",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          value: _leftCheekSelected,
+                          onChanged: (value) {
+                            setState(() {
+                              _leftCheekSelected = !_leftCheekSelected;
+                            });
+                          },
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 const SizedBox(
@@ -134,6 +165,7 @@ class _RegistState extends State<Regist> {
                   ),
                   child: ElevatedButton(
                     onPressed: () {
+                      AddPatient(Name,Email,Address,PhoneNumber,Password);
                       Navigator.push(
                         context,
                         MaterialPageRoute(

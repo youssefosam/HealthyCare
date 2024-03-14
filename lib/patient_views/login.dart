@@ -33,13 +33,17 @@ class loginPatient extends StatelessWidget {
                   SizedBox(
                     height: 30,
                   ),
-                  TextFilt(hintText: 'رقم الهويه الوطنيه',),
-                  TextFilt(hintText: 'كلمه المرور',),
+                  TextFilt(
+                    hintText: 'الايميل',
+                  ),
+                  TextFilt(
+                    hintText: 'كلمه المرور',
+                  ),
                   const SizedBox(
                     height: 30,
                   ),
                   Container(
-                    decoration : BoxDecoration(
+                    decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(20),
                     ),
@@ -47,8 +51,8 @@ class loginPatient extends StatelessWidget {
                       onPressed: () {
                         Navigator.push(context,
                             MaterialPageRoute(builder: (context) {
-                              return PatientHomeView();
-                            }));
+                          return PatientHomeView();
+                        }));
                       },
                       child: Text(
                         'تسجيل الدخول',
@@ -60,14 +64,12 @@ class loginPatient extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
-                            return const Regist();
+                        return const Regist();
                       }));
                     },
-                    child: Text(
-                      'انشاء حساب جديد',
-                      style: TextStyle(color: Colors.black, fontWeight:FontWeight.bold )
-
-                    ),
+                    child: Text('انشاء حساب جديد',
+                        style: TextStyle(
+                            color: Colors.black, fontWeight: FontWeight.bold)),
                   )
                 ],
               ),

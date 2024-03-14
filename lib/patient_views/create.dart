@@ -14,6 +14,8 @@ class Regist extends StatefulWidget {
 class _RegistState extends State<Regist> {
   bool _leftCheekSelected = false;
   bool _rightCheekSelected = false;
+  var EmailInputElement;
+  var PasswordInputElement;
   final Name = TextEditingController();
   final Email = TextEditingController();
   final Address = TextEditingController();

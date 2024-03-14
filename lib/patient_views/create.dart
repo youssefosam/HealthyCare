@@ -13,6 +13,9 @@ class Regist extends StatefulWidget {
 class _RegistState extends State<Regist> {
   bool _leftCheekSelected = false;
   bool _rightCheekSelected = false;
+  final Name = TextEditingController();
+  final  Email = TextEditingController();
+  final Password = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(

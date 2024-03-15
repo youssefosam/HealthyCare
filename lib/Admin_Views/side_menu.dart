@@ -46,7 +46,7 @@ class NavDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(Icons.medical_information_outlined),
-            title: Text('Add Patient'),
+            title: Text('Add Doctor'),
             onTap: () {
               // Navigator.push(
               //   context,

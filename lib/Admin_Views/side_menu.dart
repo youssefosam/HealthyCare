@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:healthycare/Admin_Views/dashboard.dart';
 import 'package:healthycare/Admin_Views/login(admin).dart';
 import 'package:healthycare/Admin_Views/patients.dart';
 
@@ -39,6 +40,20 @@ class NavDrawer extends StatelessWidget {
                 MaterialPageRoute(
                   builder: (context) {
                     return AllPatient();
+                  },
+                ),
+              );
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.home_outlined),
+            title: Text('Home'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return DashBoard();
                   },
                 ),
               );

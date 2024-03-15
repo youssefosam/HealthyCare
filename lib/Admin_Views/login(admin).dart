@@ -22,7 +22,9 @@ class _AdLoginState extends State<AdLogin> {
         centerTitle: true,
         title: Text(
           'Login Page',
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
       body: Center(
@@ -31,6 +33,16 @@ class _AdLoginState extends State<AdLogin> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              CircleAvatar(
+                radius: 65.0,
+                backgroundColor: Color.fromARGB(255, 229, 222, 138),
+                child: Icon(
+                  Icons.person,
+                  size: 80,
+                  color: Colors.black,
+                ),
+              ),
+              SizedBox(height: 40.0),
               FractionallySizedBox(
                 widthFactor: 0.8,
                 child: TextField(

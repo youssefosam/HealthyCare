@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:healthycare/Admin_Views/side_menu.dart';
+import 'package:healthycare/Admin_Views/transfer.dart';
 
 class AllPatient extends StatefulWidget {
   const AllPatient({super.key});
@@ -17,6 +18,12 @@ class _AllPatientState extends State<AllPatient> {
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 185, 225, 250),
         centerTitle: true,
+        title: Text(
+          ' All Patient ',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ),
       body: Center(
         child: SingleChildScrollView(
@@ -52,7 +59,16 @@ class _AllPatientState extends State<AllPatient> {
                   rows: [
                     DataRow(cells: [
                       DataCell(TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return Transfer();
+                              },
+                            ),
+                          );
+                        },
                         child: Text('Mohamed Ahmed '),
                       )),
                       DataCell(Text("301026002203")),
@@ -61,7 +77,16 @@ class _AllPatientState extends State<AllPatient> {
                     ]),
                     DataRow(cells: [
                       DataCell(TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return Transfer();
+                              },
+                            ),
+                          );
+                        },
                         child: Text('Mohamed Moahmoud'),
                       )),
                       DataCell(Text("301050630523")),
@@ -70,7 +95,16 @@ class _AllPatientState extends State<AllPatient> {
                     ]),
                     DataRow(cells: [
                       DataCell(TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return Transfer();
+                              },
+                            ),
+                          );
+                        },
                         child: Text('Ali Osama'),
                       )),
                       DataCell(Text("301050630523")),
@@ -79,7 +113,16 @@ class _AllPatientState extends State<AllPatient> {
                     ]),
                     DataRow(cells: [
                       DataCell(TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return Transfer();
+                              },
+                            ),
+                          );
+                        },
                         child: Text('Assma Sayed'),
                       )),
                       DataCell(Text("301026006803")),

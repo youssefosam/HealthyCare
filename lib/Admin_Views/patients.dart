@@ -51,13 +51,14 @@ class _AllPatientState extends State<AllPatient> {
                   headingRowColor: MaterialStateColor.resolveWith(
                       (states) => Color.fromARGB(255, 171, 183, 224)),
                   columns: [
+                    DataColumn(label: Text("#")),
                     DataColumn(label: Text("name")),
-                    DataColumn(label: Text("NID")),
                     DataColumn(label: Text("diagonsis")),
                     DataColumn(label: Text("City")),
                   ],
                   rows: [
                     DataRow(cells: [
+                      DataCell(Text("1")),
                       DataCell(TextButton(
                         onPressed: () {
                           Navigator.push(
@@ -71,11 +72,11 @@ class _AllPatientState extends State<AllPatient> {
                         },
                         child: Text('Mohamed Ahmed '),
                       )),
-                      DataCell(Text("301026002203")),
                       DataCell(Text("Heart")),
                       DataCell(Text("Cairo")),
                     ]),
                     DataRow(cells: [
+                      DataCell(Text("2")),
                       DataCell(TextButton(
                         onPressed: () {
                           Navigator.push(
@@ -89,11 +90,11 @@ class _AllPatientState extends State<AllPatient> {
                         },
                         child: Text('Mohamed Moahmoud'),
                       )),
-                      DataCell(Text("301050630523")),
                       DataCell(Text("Bones")),
                       DataCell(Text("Alex")),
                     ]),
                     DataRow(cells: [
+                      DataCell(Text("3")),
                       DataCell(TextButton(
                         onPressed: () {
                           Navigator.push(
@@ -107,11 +108,11 @@ class _AllPatientState extends State<AllPatient> {
                         },
                         child: Text('Ali Osama'),
                       )),
-                      DataCell(Text("301050630523")),
                       DataCell(Text("Eyes")),
                       DataCell(Text("Alex")),
                     ]),
                     DataRow(cells: [
+                      DataCell(Text("4")),
                       DataCell(TextButton(
                         onPressed: () {
                           Navigator.push(
@@ -125,7 +126,6 @@ class _AllPatientState extends State<AllPatient> {
                         },
                         child: Text('Assma Sayed'),
                       )),
-                      DataCell(Text("301026006803")),
                       DataCell(Text("Heart")),
                       DataCell(Text("Cairo")),
                     ]),

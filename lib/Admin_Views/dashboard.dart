@@ -28,7 +28,13 @@ class _DashBoardState extends State<DashBoard> {
         title: Text('Dashboard'),
       ),
       body: Center(
-        child: Text("Welcom Again Admin"),
+        child: Text(
+          "Welcom Again Admin",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 24,
+          ),
+        ),
       ),
     );
   }

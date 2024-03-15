@@ -25,7 +25,12 @@ class _DashBoardState extends State<DashBoard> {
         //   icon: Icon(Icons.menu),
         // ),
         centerTitle: true,
-        title: Text('Dashboard'),
+        title: Text(
+          'Dashboard',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ),
       body: Center(
         child: Text(

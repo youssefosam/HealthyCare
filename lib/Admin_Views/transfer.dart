@@ -123,7 +123,6 @@ class _TransferState extends State<Transfer> {
                       width: 10.0,
                     ),
                     DropdownButton<String>(
-                      menuMaxHeight: 15,
                       hint: Text('------------------'),
                       items: <String>['Cario', 'Alexandria', 'Giza', 'Faiyum']
                           .map((String value) {
@@ -150,7 +149,6 @@ class _TransferState extends State<Transfer> {
                       width: 10.0,
                     ),
                     DropdownButton<String>(
-                      menuMaxHeight: 15,
                       hint: Text("------------------"),
                       items: <String>[
                         'Heart',

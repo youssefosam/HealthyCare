@@ -58,7 +58,7 @@ class _TransferState extends State<Transfer> {
                     height: 10,
                   ),
                   Text(
-                    'NID:................',
+                    'Address:................',
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
@@ -129,6 +129,36 @@ class _TransferState extends State<Transfer> {
                         hint: Text('------------------'),
                         items: <String>['Cario', 'Alexandria', 'Giza', 'Faiyum']
                             .map((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(value),
+                          );
+                        }).toList(),
+                        onChanged: (_) {},
+                      )
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Text(
+                        'Area:',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18.0,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 10.0,
+                      ),
+                      DropdownButton<String>(
+                        hint: Text('------------------'),
+                        items: <String>[
+                          'Cario',
+                          'Alexandria',
+                          'Giza',
+                          'Faiyum',
+                          'DownTown'
+                        ].map((String value) {
                           return DropdownMenuItem<String>(
                             value: value,
                             child: Text(value),

@@ -55,6 +55,7 @@ class _AllPatientState extends State<AllPatient> {
                     DataColumn(label: Text("name")),
                     DataColumn(label: Text("diagonsis")),
                     DataColumn(label: Text("City")),
+                    DataColumn(label: Text("Address")),
                   ],
                   rows: [
                     DataRow(cells: [
@@ -74,6 +75,7 @@ class _AllPatientState extends State<AllPatient> {
                       )),
                       DataCell(Text("Heart")),
                       DataCell(Text("Cairo")),
+                      DataCell(Text("36 Gohar El-Kaed St., El-Azhar")),
                     ]),
                     DataRow(cells: [
                       DataCell(Text("2")),
@@ -92,6 +94,7 @@ class _AllPatientState extends State<AllPatient> {
                       )),
                       DataCell(Text("Bones")),
                       DataCell(Text("Alex")),
+                      DataCell(Text("8 El- Nasr St., El-Manshia, Alexandria")),
                     ]),
                     DataRow(cells: [
                       DataCell(Text("3")),
@@ -109,7 +112,8 @@ class _AllPatientState extends State<AllPatient> {
                         child: Text('Ali Osama'),
                       )),
                       DataCell(Text("Eyes")),
-                      DataCell(Text("Alex")),
+                      DataCell(Text("Giza")),
+                       DataCell(Text(" 32 Mahmoud St., P.O. Box: 12112")),
                     ]),
                     DataRow(cells: [
                       DataCell(Text("4")),
@@ -128,6 +132,7 @@ class _AllPatientState extends State<AllPatient> {
                       )),
                       DataCell(Text("Heart")),
                       DataCell(Text("Cairo")),
+                      DataCell(Text(" 4, 5 Sliman El Halby St")),
                     ]),
                   ]),
             ],

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:healthycare/Admin_Views/login(admin).dart';
-import 'patients.dart';
+import 'package:healthycare/Admin_Views/patients.dart';
 
 class NavDrawer extends StatelessWidget {
   const NavDrawer({super.key});

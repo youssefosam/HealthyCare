@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:healthycare/Admin_Views/login(admin).dart';
+import 'patients.dart';
 
 class NavDrawer extends StatelessWidget {
   const NavDrawer({super.key});
@@ -7,6 +8,7 @@ class NavDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      backgroundColor: Colors.blue,
       child: ListView(
         padding: EdgeInsets.zero,
         children: <Widget>[
@@ -32,14 +34,14 @@ class NavDrawer extends StatelessWidget {
             leading: Icon(Icons.person_outline),
             title: Text('Patient'),
             onTap: () {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(
-              //     builder: (context) {
-              //       return AllPatient();
-              //     },
-              //   ),
-              // );
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return AllPatient();
+                  },
+                ),
+              );
             },
           ),
           ListTile(

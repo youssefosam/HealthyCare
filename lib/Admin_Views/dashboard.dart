@@ -14,16 +14,10 @@ class _DashBoardState extends State<DashBoard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 205, 235, 255),
       drawer: NavDrawer(),
       appBar: AppBar(
-        // leading: IconButton(
-        //   onPressed: () {
-        //     setState(() {
-        //       isExpanded = !isExpanded;
-        //     });
-        //   },
-        //   icon: Icon(Icons.menu),
-        // ),
+        backgroundColor: Color.fromARGB(255, 185, 225, 250),
         centerTitle: true,
         title: Text(
           'Dashboard',

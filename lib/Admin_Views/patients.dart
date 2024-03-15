@@ -18,6 +18,26 @@ class _AllPatientState extends State<AllPatient> {
         backgroundColor: Color.fromARGB(255, 185, 225, 250),
         centerTitle: true,
       ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Card(
+                child: Row(
+                  children: [
+                    Icon(Icons.report_outlined),
+                    SizedBox(width: 10),
+                    Text(
+                      'All Patient Table',
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

@@ -38,16 +38,20 @@ class _DashBoardState extends State<DashBoard> {
                 fontSize: 24,
               ),
             ),
+            Text(
+              'You have ......patient left to complete today',
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                padding: EdgeInsets.all(20.0),
-                child: Text(
-                  '4',
-                  style: TextStyle(
-                    fontSize: 56,
-                    color: Colors.black,
-                  ),
+              padding: EdgeInsets.all(20.0),
+              child: Text(
+                '4',
+                style: TextStyle(
+                  fontSize: 56,
+                  color: Colors.black,
                 ),
               ),
             )

@@ -123,6 +123,8 @@ class _TransferState extends State<Transfer> {
                       width: 10.0,
                     ),
                     DropdownButton<String>(
+                      menuMaxHeight: 15,
+                      hint: Text('------------------'),
                       items: <String>['Cario', 'Alexandria', 'Giza', 'Faiyum']
                           .map((String value) {
                         return DropdownMenuItem<String>(
@@ -148,6 +150,8 @@ class _TransferState extends State<Transfer> {
                       width: 10.0,
                     ),
                     DropdownButton<String>(
+                      menuMaxHeight: 15,
+                      hint: Text("------------------"),
                       items: <String>[
                         'Heart',
                         'Back',
@@ -172,7 +176,7 @@ class _TransferState extends State<Transfer> {
                 ),
                 Center(
                   child: MaterialButton(
-                    color: Colors.blueAccent,
+                    color: Colors.lightBlue,
                     height: 40.0,
                     minWidth: 80.0,
                     onPressed: () {},

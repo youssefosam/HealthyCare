@@ -65,7 +65,9 @@ class _AddDoctorState extends State<AddDoctor> {
                   ),
                 ],
               ),
-              SizedBox(height: 10.0),
+              SizedBox(
+                height: 10.0,
+              ),
               Row(
                 children: [
                   Text(
@@ -89,7 +91,9 @@ class _AddDoctorState extends State<AddDoctor> {
                   ),
                 ],
               ),
-              SizedBox(height: 10.0),
+              SizedBox(
+                height: 10.0,
+              ),
               Row(
                 children: [
                   Text(
@@ -122,7 +126,9 @@ class _AddDoctorState extends State<AddDoctor> {
                   )
                 ],
               ),
-              SizedBox(height: 10.0),
+              SizedBox(
+                height: 10.0,
+              ),
               Row(
                 children: [
                   Text(
@@ -170,7 +176,9 @@ class _AddDoctorState extends State<AddDoctor> {
                   SizedBox(height: 10.0),
                 ],
               ),
-              SizedBox(height: 20.0),
+              SizedBox(
+                height: 20.0,
+              ),
               MaterialButton(
                 onPressed: () {},
                 child: Text('Add'),

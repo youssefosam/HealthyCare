@@ -40,7 +40,7 @@ class _AddDoctorState extends State<AddDoctor> {
                 ),
               ),
               SizedBox(
-                height: 20,
+                height: 10,
               ),
               Row(
                 children: [

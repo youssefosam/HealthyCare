@@ -11,7 +11,6 @@ class AddDoctor extends StatefulWidget {
 class _AddDoctorState extends State<AddDoctor> {
   final _DoctorName = TextEditingController();
   final _City = TextEditingController();
-  // final String Spil;
   final _Email = TextEditingController();
   final _Password = TextEditingController();
 
@@ -34,176 +33,139 @@ class _AddDoctorState extends State<AddDoctor> {
       ),
       //Body Part
       body: Center(
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                'Information of new Doctor',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
+        child: Column(
+          children: [
+            Text(
+              'Information of new Doctor',
+              style: TextStyle(
+                fontSize: 28.0,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+            SizedBox(
+              height: 40.0,
+            ),
+            FractionallySizedBox(
+              widthFactor: 0.8,
+              child: TextField(
+                controller: _DoctorName,
+                decoration: InputDecoration(
+                  labelText: "Doctor Name",
+                  labelStyle: TextStyle(
+                    fontWeight: FontWeight.w300,
+                  ),
+                  border: OutlineInputBorder(),
+                  hintText: 'write  Doctor his name here...',
                 ),
               ),
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    'Name:',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                    ),
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            FractionallySizedBox(
+              widthFactor: 0.8,
+              child: TextField(
+                controller: _City,
+                decoration: InputDecoration(
+                  labelText: "Doctor city",
+                  labelStyle: TextStyle(
+                    fontWeight: FontWeight.w300,
                   ),
-                  SizedBox(
-                    width: 8.0,
-                  ),
-                  FractionallySizedBox(
-                    widthFactor: 0.8,
-                    child: TextField(
-                      controller: _DoctorName,
-                      decoration: InputDecoration(
-                        labelText: "Dr Name",
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 10.0,
-              ),
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    'City:',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 8.0,
-                  ),
-                  FractionallySizedBox(
-                    widthFactor: 0.8,
-                    child: TextField(
-                      controller: _City,
-                      decoration: InputDecoration(
-                        labelText: "City",
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 10.0,
-              ),
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    'Specalty:',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 8.0,
-                  ),
-                  DropdownButton<String>(
-                    hint: Text("------------------"),
-                    items: <String>[
-                      'Heart',
-                      'Back',
-                      'Eyes',
-                      'Ears',
-                      'Stomich',
-                      'Head',
-                      'Nose',
-                      'Leg'
-                    ].map((String e) {
-                      return DropdownMenuItem<String>(
-                        value: e,
-                        child: Text(e),
-                      );
-                    }).toList(),
-                    onChanged: (_) {},
-                  )
-                ],
-              ),
-              SizedBox(
-                height: 10.0,
-              ),
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    'Email:',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 8.0,
-                  ),
-                  FractionallySizedBox(
-                    widthFactor: 0.8,
-                    child: TextField(
-                      controller: _Email,
-                      decoration: InputDecoration(
-                        labelText: "Email",
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 10.0,
-              ),
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    'Password:',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 8.0,
-                  ),
-                  FractionallySizedBox(
-                    widthFactor: 0.8,
-                    child: TextField(
-                      obscureText: true,
-                      controller: _Password,
-                      decoration: InputDecoration(
-                        labelText: "Password",
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              MaterialButton(
-                height: 15.0,
-                onPressed: () {},
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(Icons.send_sharp),
-                    SizedBox(
-                      width: 8.0,
-                    ),
-                    Text(
-                      'Send',
-                    ),
-                  ],
+                  border: OutlineInputBorder(),
+                  hintText: 'write  Doctor his city here...',
                 ),
-              )
-            ],
-          ),
+              ),
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  'Spicalty:',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+                SizedBox(
+                  width: 10.0,
+                ),
+                DropdownButton<String>(
+                  alignment: AlignmentDirectional.centerStart,
+                  hint: Text("--------------"),
+                  items: <String>[
+                    'Heart',
+                    'Back',
+                    'Eyes',
+                    'Ears',
+                    'Stomich',
+                    'Head',
+                    'Nose',
+                    'Leg'
+                  ].map((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(value),
+                    );
+                  }).toList(),
+                  onChanged: (_) {},
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            FractionallySizedBox(
+              widthFactor: 0.8,
+              child: TextField(
+                controller: _Email,
+                decoration: InputDecoration(
+                  labelText: "Doctor Email",
+                  labelStyle: TextStyle(
+                    fontWeight: FontWeight.w300,
+                  ),
+                  border: OutlineInputBorder(),
+                  hintText: 'write  Doctor his E-mail here...',
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            FractionallySizedBox(
+              widthFactor: 0.8,
+              child: TextField(
+                controller: _Password,
+                decoration: InputDecoration(
+                  labelText: "Doctor Password",
+                  labelStyle: TextStyle(
+                    fontWeight: FontWeight.w300,
+                  ),
+                  border: OutlineInputBorder(),
+                  hintText: 'write  Doctor his password here...',
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            MaterialButton(
+              color: Colors.lightBlue,
+              onPressed: () {},
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(Icons.add),
+                  SizedBox(
+                    width: 5.0,
+                  ),
+                  Text('Add '),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );

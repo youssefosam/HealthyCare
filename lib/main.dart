@@ -1,15 +1,8 @@
 import 'package:flutter/material.dart';
-// import 'package:healthycare/admin_views/home_admin_view1.dart';
-
-// import 'package:healthycare/patient_views/chose_symptoms.dart';
-
-// import 'package:healthycare/patient_views/notification_view.dart';
 // import 'package:healthycare/Doctor_views/login.dart';
-// import 'package:healthycare/admin_views/login.dart';
+import 'package:healthycare/Admin_Views/login.dart';
 // import 'package:healthycare/lab_views/login.dart';
 // import 'package:healthycare/patient_views/login.dart';
-
-import 'Admin_Views/login(admin).dart';
 
 void main() {
   runApp(const DoctorApp());
@@ -28,12 +21,9 @@ class _DoctorAppState extends State<DoctorApp> {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       // home: loginDoctor(), //doctor views
-      home: AdLogin(), //admin views
+      home: LoginAdmin(), //admin views
       // home: loginlab(), //lab views
       // home: loginPatient(), //patient views
-      // home: Notification2(),
-      // home: ChooseSymptoms(),
-      // home:transfer(),
     );
   }
 }

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:healthycare/Admin_Views/dashboard.dart';
 
-class AdLogin extends StatefulWidget {
-  const AdLogin({super.key});
+class LoginAdmin extends StatefulWidget {
+  const LoginAdmin({super.key});
 
   @override
-  State<AdLogin> createState() => _AdLoginState();
+  State<LoginAdmin> createState() => _LoginAdminState();
 }
 
-class _AdLoginState extends State<AdLogin> {
+class _LoginAdminState extends State<LoginAdmin> {
   final _Email = TextEditingController();
   var EmailInputElement;
   final _Password = TextEditingController();

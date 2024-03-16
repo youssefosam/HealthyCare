@@ -28,7 +28,6 @@ class _DashBoardState extends State<DashBoard> {
       ),
       body: Center(
         child: Column(
-          // mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+// import 'package:healthycare/Admin_Views/add_docter.dart';
 import 'package:healthycare/Admin_Views/dashboard.dart';
-import 'package:healthycare/Admin_Views/login(admin).dart';
+import 'package:healthycare/Admin_Views/login.dart';
 import 'package:healthycare/Admin_Views/patients.dart';
 
 class NavDrawer extends StatelessWidget {
@@ -26,10 +27,24 @@ class NavDrawer extends StatelessWidget {
               ),
             ),
           ),
+          // ListTile(
+          //   leading: Icon(Icons.verified_user),
+          //   title: Text('Profile'),
+          //   onTap: () {},
+          // ),
           ListTile(
-            leading: Icon(Icons.verified_user),
-            title: Text('Profile'),
-            onTap: () {},
+            leading: Icon(Icons.home_outlined),
+            title: Text('Home'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return DashBoard();
+                  },
+                ),
+              );
+            },
           ),
           ListTile(
             leading: Icon(Icons.person_outline),
@@ -40,20 +55,6 @@ class NavDrawer extends StatelessWidget {
                 MaterialPageRoute(
                   builder: (context) {
                     return AllPatient();
-                  },
-                ),
-              );
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.home_outlined),
-            title: Text('Home'),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return DashBoard();
                   },
                 ),
               );
@@ -81,7 +82,7 @@ class NavDrawer extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return AdLogin();
+                    return LoginAdmin();
                   },
                 ),
               );

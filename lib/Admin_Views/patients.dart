@@ -113,7 +113,7 @@ class _AllPatientState extends State<AllPatient> {
                       )),
                       DataCell(Text("Eyes")),
                       DataCell(Text("Giza")),
-                       DataCell(Text(" 32 Mahmoud St., P.O. Box: 12112")),
+                      DataCell(Text(" 32 Mahmoud St., P.O. Box: 12112")),
                     ]),
                     DataRow(cells: [
                       DataCell(Text("4")),

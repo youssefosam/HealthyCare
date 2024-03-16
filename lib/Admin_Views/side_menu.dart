@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:healthycare/Admin_Views/add_doctor.dart';
 import 'package:healthycare/Admin_Views/dashboard.dart';
 import 'package:healthycare/Admin_Views/login(admin).dart';
 import 'package:healthycare/Admin_Views/patients.dart';
@@ -63,14 +64,14 @@ class NavDrawer extends StatelessWidget {
             leading: Icon(Icons.medical_information_outlined),
             title: Text('Add Doctor'),
             onTap: () {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(
-              //     builder: (context) {
-              //       return AddDoctor();
-              //     },
-              //   ),
-              // );
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return AddDoctor();
+                  },
+                ),
+              );
             },
           ),
           ListTile(
